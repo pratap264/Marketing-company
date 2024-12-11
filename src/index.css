@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .link {
+    @apply cursor-pointer hover:underline;
+  }
+  .button-outline {
+    @apply rounded-md border-2 border-primary hover:bg-primary/80 hover:text-black duration-500 py-2 px-6 text-primary tracking-wider;
+  }
+
+  .primary-btn {
+    @apply bg-primary text-white hover:bg-primary/80  duration-500 rounded-lg py-2 px-4;
+  }
+}
+
+/* Global font styles */
+body {
+  @apply font-sans;
+}
+
+/* Define the animation for word reveal */
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tailwind custom animation class */
+@layer utilities {
+  .animate-reveal {
+    animation: reveal 1s forwards;
+    opacity: 0;
+  }
+}
+
+/* Define the slide-from-left animation */
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%); /* Start completely off-screen to the left */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateX(0); /* End at the original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Create a custom Tailwind class for the animation */
+@layer utilities {
+  .animate-slide-from-left {
+    animation: slideFromLeft 1s ease-out forwards; /* 1s duration and easing */
+  }
+}
+
+/* Custom styles */
+.primary-btn {
+  @apply px-6 py-2 bg-primary text-white rounded-lg transition-all duration-300 hover:bg-primary-dark;
+}
+
+/* Ensure transitions are smooth */
+.navbar {
+  @apply duration-300;
+}
+
+/* Add Tailwind's dark mode support */
+html {
+  scroll-behavior: smooth;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color:#00a8cb; /* Set arrow color to black */
+  width: 50px; /* Adjust size */
+  height: 50px;
+  top: 50%; /* Vertically center the arrows */
+  transform: translateY(-50%); /* Ensure proper vertical alignment */
+}
+
+.swiper-button-prev {
+  left: 15px; /* Move closer to the carousel */
+}
+
+.swiper-button-next {
+  right: 15px; /* Move closer to the carousel */
+}
