@@ -38,20 +38,20 @@ const Footer = () => {
             </p>
 
             {/* Social Media Icons */}
-            <div className="flex items-center gap-6 mt-6 justify-center md:justify-start">
+            <div className="flex items-center gap-6 mt-6 justify-center md:justify-start text-white">
               <a
                 href="https://www.instagram.com/garageadvertisements"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaInstagram className="text-3xl hover:text-primary duration-300" />
+                <FaInstagram className="text-3xl hover:text-primary duration-300 text-white" />
               </a>
               <a
                 href="https://www.linkedin.com/company/garageadvertisements/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="text-3xl hover:text-primary duration-300" />
+                <FaLinkedin className="text-3xl hover:text-primary duration-300 text-white" />
               </a>
             </div>
           </div>
@@ -65,7 +65,7 @@ const Footer = () => {
                   className="flex flex-col items-center text-gray-400 hover:text-primary transition duration-300"
                 >
                   <a href={link.link} className="flex flex-col items-center">
-                    <span className="text-primary text-3xl mb-2">{link.icon}</span>
+                    <span className="text-white text-3xl mb-2">{link.icon}</span> {/* Set icon to white */}
                     <span className="text-lg font-medium">{link.title}</span>
                   </a>
                 </li>
@@ -86,4 +86,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
