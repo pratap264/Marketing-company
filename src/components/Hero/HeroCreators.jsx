@@ -1,8 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import yellowCar from "../../assets/website/rb_2132.png"; // You can remove this import if it's not needed.
 import yellowCar2 from "../../assets/website/bg-2.jpg"; // New background image
 
 const HeroCreators = () => {
+  const navigate = useNavigate(); // Initialize navigate function
+
+  const handleGetInTouchClick = () => {
+    navigate("/contact"); // Redirect to the contact page
+  };
+
   return (
     <div
       className="dark:bg-gray-950 dark:text-white duration-300"
@@ -90,6 +97,7 @@ const HeroCreators = () => {
               data-aos-delay="500"
               data-aos-offset="0"
               className="primary-btn"
+              onClick={handleGetInTouchClick} // Attach the click handler
             >
               Get in Touch
             </button>

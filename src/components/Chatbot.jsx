@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([
@@ -8,6 +8,7 @@ const Chatbot = () => {
     },
   ]);
   const [userMessage, setUserMessage] = useState("");
+  const [isOpen, setIsOpen] = useState(false); // State to control visibility
 
   const handleUserInput = (e) => {
     setUserMessage(e.target.value);
@@ -90,35 +91,6 @@ const Chatbot = () => {
             </button>
           </>
         );
-        if (
-          userText.includes("what is garage advertisements") ||
-          userText.includes("about garage advertisements") ||
-          userText.includes("your company") ||
-          userText.includes("about company") ||
-          userText.includes("garage advertisements") ||
-          userText.includes("what do you do")
-        ) {
-          botResponse = (
-            <>
-              <p>
-                Garage Advertisements is a dynamic marketing and advertising
-                agency. We specialize in:
-              </p>
-              <ul>
-                <li>Brand Promotions</li>
-                <li>Digital Advertising</li>
-                <li>Social Media Campaigns</li>
-                <li>Reputation Management</li>
-                <li>Public Relations</li>
-                <li>Creative Design and Content</li>
-              </ul>
-              <p>
-                Our goal is to empower brands and elevate their market presence.
-                Let us know how we can help you!
-              </p>
-            </>
-          );
-        }
       } else if (
         userText.includes("brand") ||
         userText.includes("worked with") ||
@@ -247,7 +219,7 @@ const Chatbot = () => {
           <>
             <p>
               If you would like to get in touch with us, please fill out the
-              form below: -
+              form below: - 
             </p>
             <form>
               <input
@@ -288,10 +260,9 @@ const Chatbot = () => {
       ) {
         botResponse = (
           <>
-            <p>Call - +91 76519 78884 </p>
+            <p>Call - +91 76519 78884</p>
             <br />
             <p>Location - Delhi, Bengaluru</p>
-
             <br />
             <p>Email - info@garageadvertisements.com</p>
           </>
@@ -337,61 +308,65 @@ const Chatbot = () => {
     window.location.href = "/creator";
   };
 
+  const toggleChat = () => {
+    setIsOpen(!isOpen); // Toggle visibility of chat
+  };
+
   return (
     <div
       className="chatbot-container"
       style={{ position: "fixed", bottom: "20px", right: "20px" }}
     >
-      <div
-        className="chatbot"
-        style={{
-          width: "300px",
-          backgroundColor: "#fff",
-          borderRadius: "8px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          padding: "10px",
-        }}
-      >
+      {isOpen && (
         <div
-          className="messages"
-          style={{ maxHeight: "400px", overflowY: "auto" }}
+          className="chatbot"
+          style={{
+            width: "300px",
+            backgroundColor: "#fff",
+            borderRadius: "8px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            padding: "10px",
+          }}
         >
-          {messages.map((message, index) => (
-            <div
-              key={index}
-              className={`message ${message.sender}`}
-              style={{ padding: "5px 10px", marginBottom: "10px" }}
+          <div className="messages" style={{ maxHeight: "400px", overflowY: "auto" }}>
+            {messages.map((message, index) => (
+              <div
+                key={index}
+                className={`message ${message.sender}`}
+                style={{ padding: "5px 10px", marginBottom: "10px" }}
+              >
+                <p>{message.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="user-input">
+            <input
+              type="text"
+              value={userMessage}
+              onChange={handleUserInput}
+              placeholder="Type your message..."
+              style={{
+                width: "80%",
+                padding: "8px",
+                borderRadius: "4px",
+                marginRight: "10px",
+              }}
+            />
+            <button
+              onClick={handleSendMessage}
+              style={{
+                padding: "8px 16px",
+                backgroundColor: "#00a8cb",
+                color: "white",
+                borderRadius: "4px",
+              }}
             >
-              <p>{message.text}</p>
-            </div>
-          ))}
+              Send
+            </button>
+          </div>
         </div>
-        <div className="user-input">
-          <input
-            type="text"
-            value={userMessage}
-            onChange={handleUserInput}
-            placeholder="Type your message..."
-            style={{
-              width: "80%",
-              padding: "8px",
-              borderRadius: "4px",
-              marginRight: "10px",
-            }}
-          />
-          <button
-            onClick={handleSendMessage}
-            style={{
-              padding: "8px 16px",
-              backgroundColor: "#00a8cb",
-              color: "white",
-              borderRadius: "4px",
-            }}
-          >
-            Send
-          </button>
-        </div>
-      </div>
+      )}
+
       <button
         style={{
           position: "fixed",
@@ -403,9 +378,7 @@ const Chatbot = () => {
           padding: "15px",
           fontSize: "20px",
         }}
-        onClick={() =>
-          document.querySelector(".chatbot").classList.toggle("hidden")
-        }
+        onClick={toggleChat}
       >
         💬
       </button>

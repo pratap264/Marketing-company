@@ -14,9 +14,9 @@ import Team from '../components/OurTeam/Team';
      <div>
       <Hero />
       <Services />
-      {/* <Testimonial /> */}
+      <Testimonial />
       <BrandsLogo/>
-      {/* <Team/> */}
+      <Team/>
       <WorkComp />
      </div>
    )

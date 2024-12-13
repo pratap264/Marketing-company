@@ -3,10 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  build: {
-    sourcemap: true,
-  },
-  server: {
-    open: true,
-  },
+  base: '/Marketing-company/', // Add the exact repository name here with slashes
 });
