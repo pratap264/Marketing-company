@@ -8,25 +8,25 @@ const teamMembersData = [
   {
     name: "John Doe",
     role: "Web Developer",
-    photo: john_doe, // Replace with actual photo URL or path
+    photo: john_doe,
     aosDelay: "0",
   },
   {
     name: "Jane Smith",
     role: "Product Designer",
-    photo: jane_smith, // Replace with actual photo URL or path
+    photo: jane_smith,
     aosDelay: "300",
   },
   {
     name: "Michael Lee",
     role: "Branding Specialist",
-    photo: michel_lee, // Replace with actual photo URL or path
+    photo: michel_lee,
     aosDelay: "500",
   },
   {
     name: "Sarah Kim",
     role: "UI/UX Designer",
-    photo: sarah_kim, // Replace with actual photo URL or path
+    photo: sarah_kim,
     aosDelay: "700",
   },
 ];
@@ -47,21 +47,21 @@ const Team = () => {
   return (
     <>
       <span id="about"></span>
-      <div className="bg-gray-100 dark:bg-black dark:text-white py-12 sm:grid sm:place-items-center">
+      <div className="bg-gray-100 py-12 sm:grid sm:place-items-center">
         <div className="container">
           {/* Header */}
           <div className="pb-12 text-center space-y-3 mb-8">
             <h1
               data-aos="fade-up"
-              className="text-3xl font-semibold sm:text-3xl text-violet-950 dark:text-primary mb-6"
+              className="text-4xl sm:text-3xl text-black-950 mb-6  font-black"
             >
               Our Team
             </h1>
             <p
               data-aos="fade-up"
-              className="text-gray-600 dark:text-gray-400 text-sm pb-6px"
+              className="text-gray-600 text-sm pb-6px"
             >
-             From concept to delivery, our team ensures every step is carefully crafted for exceptional results.
+              From concept to delivery, our team ensures every step is carefully crafted for exceptional results.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ const Team = () => {
                   className="w-40 h-40 rounded-full mx-auto"
                 />
                 <h2 className="text-lg font-semibold">{member.name}</h2>
-                <p className="text-gray-600 dark:text-gray-400">{member.role}</p>
+                <p className="text-gray-600">{member.role}</p>
               </div>
             ))}
           </div>

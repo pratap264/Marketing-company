@@ -38,7 +38,7 @@ const BrandsLogo = () => {
       <div className="relative">
         <Swiper
           spaceBetween={30}
-          slidesPerView={5} // Show 5 logos at a time by default
+          slidesPerView={5} // Default: 5 logos on larger screens
           loop={true} // Enable looping
           autoplay={{
             delay: 2000, // Time in milliseconds between auto-slide
@@ -47,17 +47,26 @@ const BrandsLogo = () => {
           navigation={true} // Enable navigation arrows
           modules={[Navigation, Autoplay]} // Register Navigation and Autoplay modules
           breakpoints={{
+            180: {
+              slidesPerView: 1, // Show 1 logo on mobile screens (below 640px)
+            },
+            240: {
+              slidesPerView: 1, // Show 1 logo on mobile screens (below 640px)
+            },
+            340: {
+              slidesPerView: 1, // Show 1 logo on mobile screens (below 640px)
+            },
             640: {
-              slidesPerView: 2, // 2 logos on small screens (mobile)
+              slidesPerView: 1, // Show 1 logo on mobile screens (below 640px)
             },
             768: {
-              slidesPerView: 3, // 3 logos on tablet screens
+              slidesPerView: 3, // 3 logos on tablet screens (768px and above)
             },
             1024: {
-              slidesPerView: 4, // 4 logos on desktop screens
+              slidesPerView: 4, // 4 logos on desktop screens (1024px and above)
             },
             1280: {
-              slidesPerView: 5, // 5 logos on larger screens
+              slidesPerView: 5, // 5 logos on larger screens (1280px and above)
             },
           }}
         >
@@ -84,16 +93,32 @@ const BrandsLogo = () => {
             />
           </SwiperSlide>
           <SwiperSlide className="flex justify-center items-center">
-            <img src={lightVar} alt="Var Logo" className="h-28 w-auto object-contain" />
+            <img
+              src={lightVar}
+              alt="Var Logo"
+              className="h-28 w-auto object-contain"
+            />
           </SwiperSlide>
           <SwiperSlide className="flex justify-center items-center">
-            <img src={upGov} alt="UP Gov Logo" className="h-28 w-auto object-contain" />
+            <img
+              src={upGov}
+              alt="UP Gov Logo"
+              className="h-28 w-auto object-contain"
+            />
           </SwiperSlide>
           <SwiperSlide className="flex justify-center items-center">
-            <img src={upTor} alt="UP Tor Logo" className="h-32 w-auto object-contain" />
+            <img
+              src={upTor}
+              alt="UP Tor Logo"
+              className="h-32 w-auto object-contain"
+            />
           </SwiperSlide>
           <SwiperSlide className="flex justify-center items-center">
-            <img src={lightRhl} alt="Rhl Logo" className="h-28 w-auto object-contain" />
+            <img
+              src={lightRhl}
+              alt="Rhl Logo"
+              className="h-28 w-auto object-contain"
+            />
           </SwiperSlide>
         </Swiper>
 

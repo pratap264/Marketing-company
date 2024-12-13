@@ -22,7 +22,7 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#000435] text-white font-lato">
+    <div className="bg-dark text-white font-lato">
       <section className="container py-10 relative">
         {/* Footer Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 items-center">

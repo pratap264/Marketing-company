@@ -1,16 +1,17 @@
 {
-  "homepage": "https://pratap264.github.io/Marketing-company",
-  "name": "the-coding-journey",
+  "name": "Marketing-company",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "homepage": "https://pratap264.github.io/Marketing-company/"
+  ,
   "dependencies": {
     "aos": "^2.3.4",
     "axios": "^1.7.9",
